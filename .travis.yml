@@ -1,21 +1,21 @@
 os: linux
-
 language: java
 services:
   - docker
 cache: bundler
 dist: focal
-
 install: skip
-
 jobs:
   include:
     - name: failing
       script: true
-
 after_success:
   - echo done
   - echo $TRAVIS_TEST_RESULT
+  - echo $MY_SECRET_VAR
 after_failure:
   - echo failed
   - echo $TRAVIS_TEST_RESULT
+env:
+  global:
+    secure: VhRUE+oCf98jg1KEqy/b0g8c8coZMeS+ahFVfMrLo75l2vxavhSSAATLgQW3+QzkMiSRU44XchK7eEFio4uiIpd5bY3o6/1BDmz0nnLk+tIw5ggbbQWdhr/ETf1Qa5DiLGqJKssrJDjVwM8MD8yVmmMSs2vfoTujNDtObkF1bLGTQgrfhlqMMqydS5CHhjLLR5ZvLsPHgqumy2tOBpWk0kixnLVoAeXFxWHWYCS7WCL7lRTWUdL8QMlMQK2EKyujtn22QeFBciNyKQajM8IIqJsZMJKm7bVWi9PvZVhpu0W+URDi5Sc9Th31KOybclnWjBImxQs0R5NFVkKRZndgOHolXG1lCCrt3+W3GvxBfGGUrqgK4NZfE2bRxwoZUTbECb/a++5ANy1Ni36LFlloJ0Oy0jG5rKRNOYUbxZbWK4jbN9iE6h3zdPt8J3mBWY3yAd96Zws0wKFKiDvtBFq7sb69lj97LSbuKlaSu9FnYRFPJNj03b84GNofccRjkVuMYVRvIscraNbYPinIXIg1b49KoWLLKpELZ+EXGk+xJNXyLD/tgdXn97cXX4bBily5gqJ1MMV4vjWzRMmrDoqOwt9VIGZULZ1JldAbt/ApkO1pfXMbL+BPOeXwKPEwZ3BfU9kB/id35Z08R1Y0dhzcXrBLIsE+JdOYKzE2YEwgG08=
